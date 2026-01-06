@@ -1,15 +1,18 @@
-# TaskMaster - Todo App (Hackathon Phase 2)
+# Phase 3: AI-Powered Todo Chatbot
 
-A modern, full-stack task management application built with Next.js 14 and FastAPI.
+A modern, full-stack AI-powered task management application built with Next.js 14, FastAPI, and OpenAI Agents SDK.
 
 ## 🚀 Features
 
 ### Phase 3 - AI-Powered Chatbot Interface ✅
 
 - **Natural Language Task Management**: Users can manage tasks using conversational language
+- **Multi-language Support**: Full support for English and Urdu languages
+- **Voice Commands**: Voice input functionality for todo commands
 - **MCP Server Integration**: Model Context Protocol for standardized AI tool interactions
 - **OpenAI Agents SDK**: Advanced AI processing with MCP tool integration
 - **Stateless Chat Architecture**: Database-persisted conversation state with scalable design
+- **Calm Productivity Theme**: Modern UI with dark mode support
 - **Seamless Integration**: Maintains all Phase II features with enhanced AI capabilities
 
 ### Phase 2 - Enhanced Auth Flow & UI Improvements ✅
@@ -35,9 +38,11 @@ A modern, full-stack task management application built with Next.js 14 and FastA
 ### Frontend
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS with Calm Productivity theme
 - **State Management**: React Context API
 - **HTTP Client**: Fetch API with custom error handling
+- **Voice Integration**: Web Speech API
+- **Multi-language**: Urdu/English support
 
 ### Backend
 - **Framework**: FastAPI
@@ -45,32 +50,39 @@ A modern, full-stack task management application built with Next.js 14 and FastA
 - **Database**: PostgreSQL (Neon)
 - **Authentication**: JWT with python-jose
 - **Password Hashing**: bcrypt
+- **AI Integration**: OpenAI Agents SDK
+- **MCP Protocol**: Model Context Protocol for tool integration
+- **Natural Language Processing**: MCP tools for task operations
 
 ## 📁 Project Structure
 
 ```
-todo_phase2/
-├── frontend/temp_next_app/
-│   └── src/
-│       ├── app/                    # Next.js pages
-│       │   ├── page.tsx           # Landing page
-│       │   ├── login/             # Login page
-│       │   ├── signup/            # Signup page
-│       │   ├── tasks/             # Tasks page
-│       │   └── components/        # UI components
-│       ├── context/               # React Context
-│       │   └── AuthContext.tsx    # Auth state management
-│       └── lib/                   # Utilities
-│           ├── api.ts             # API client
-│           └── auth.ts            # Token management
+phase3-ai-chatbot/
+├── frontend/
+│   ├── app/                       # Next.js pages
+│   │   ├── chat/                  # AI Chatbot interface
+│   │   ├── login/                 # Login page
+│   │   ├── signup/                # Signup page
+│   │   └── layout.tsx             # Root layout
+│   ├── components/                # Reusable components
+│   │   └── ChatBot.tsx            # AI Chatbot component
+│   ├── context/                   # React Context
+│   │   └── AuthContext.tsx        # Auth state management
+│   └── lib/                       # Utilities
+│       └── api.ts                 # API client
 ├── backend/
 │   ├── main.py                    # FastAPI app entry
 │   ├── models.py                  # Database models
 │   ├── db.py                      # Database connection
 │   ├── auth.py                    # JWT verification
+│   ├── mcp_server/                # Model Context Protocol server
+│   │   ├── server.py              # MCP protocol implementation
+│   │   ├── tools.py               # MCP task operation tools
+│   │   └── mcp_agent.config.yaml  # MCP agent configuration
 │   └── routes/
 │       ├── auth.py                # Auth endpoints
-│       └── tasks.py               # Task endpoints
+│       ├── tasks.py               # Task endpoints
+│       └── chat.py                # AI Chatbot endpoints
 └── specs/                         # Project specifications
 ```
 
@@ -136,6 +148,12 @@ BETTER_AUTH_SECRET=your_secret_key_here
 - `DELETE /api/{user_id}/tasks/{id}` - Delete task
 - `PATCH /api/{user_id}/tasks/{id}/complete` - Toggle completion
 
+### AI Chatbot (Authenticated)
+- `POST /api/{user_id}/chat` - Chat with AI assistant using natural language
+- Supports multi-language (English/Urdu) processing
+- Handles voice command processing
+- MCP tool integration for task operations
+
 ## 🎯 User Flow
 
 1. **New User**:
@@ -143,16 +161,24 @@ BETTER_AUTH_SECRET=your_secret_key_here
    - Clicks "Get Started"
    - Signs up with email/password (min 8 chars)
    - Automatically logged in
-   - Redirected to tasks dashboard
+   - Redirected to tasks dashboard or AI chatbot
 
 2. **Returning User**:
    - Lands on homepage
    - Clicks "Sign In"
    - Logs in with credentials
-   - Redirected to tasks dashboard
+   - Redirected to tasks dashboard or AI chatbot
 
 3. **Authenticated User**:
    - Visiting `/`, `/login`, or `/signup` automatically redirects to `/tasks`
+   - Can access `/chat` for AI-powered task management
+   - Interact with chatbot using natural language, voice commands, or text
+
+4. **AI Chatbot Interaction**:
+   - Navigate to `/chat` to access the AI assistant
+   - Use natural language to manage tasks (e.g., "Add a task to buy groceries")
+   - Switch between English and Urdu languages
+   - Use voice commands for hands-free task management
 
 ## 🔒 Security Features
 
@@ -162,21 +188,23 @@ BETTER_AUTH_SECRET=your_secret_key_here
 - CORS protection
 - Input validation (frontend + backend)
 
-## ✨ Phase 2 Highlights
+## ✨ Phase 3 Highlights
 
-### Before Phase 2
-- ❌ Users had to manually type `/login` or `/signup` in URL
-- ❌ Generic Next.js template on homepage
-- ❌ Light colored input text (hard to read)
-- ❌ Generic error messages
+### Before Phase 3
+- ❌ Limited to manual task entry via forms
+- ❌ English-only interface
+- ❌ No voice command support
+- ❌ Basic text-based interaction
 
-### After Phase 2
-- ✅ Beautiful landing page with clear CTAs
-- ✅ Auto-login after signup
-- ✅ Smart authenticated user redirects
-- ✅ Dark, readable input text with placeholders
-- ✅ Specific, helpful error messages from backend
-- ✅ Improved user experience throughout
+### After Phase 3
+- ✅ Natural language task management with AI assistance
+- ✅ Multi-language support (English/Urdu)
+- ✅ Voice command functionality for hands-free task management
+- ✅ MCP protocol integration for standardized AI tool interactions
+- ✅ Calm Productivity visual theme with dark mode
+- ✅ Enhanced conversational experience
+- ✅ Intelligent task processing via OpenAI integration
+- ✅ MCP tools for reliable task operations
 
 ## 🧪 Testing
 
@@ -189,12 +217,12 @@ Name: Test User
 
 ## 📄 License
 
-This project was created for a hackathon submission.
+MIT License
 
 ## 👨‍💻 Developer
 
-Built with ❤️ for Hackathon Phase 2
+Built with ❤️ for Phase 3: AI-Powered Todo Chatbot
 
 ---
 
-**Note**: This is a hackathon project demonstrating full-stack development with modern web technologies.
+**Note**: This is a full-stack AI-powered application demonstrating modern web technologies with natural language processing.
