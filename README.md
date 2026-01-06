@@ -97,7 +97,11 @@ phase3-ai-chatbot/
 │   ├── features/                  # Feature specifications
 │   ├── api/                       # API specifications
 │   ├── database/                  # Database schema specifications
-│   └── task-crud/                 # Task CRUD implementation specs
+│   ├── task-crud/                 # Task CRUD implementation specs
+│   └── ai-chatbot/                # AI Chatbot specifications
+│       ├── spec.md                # AI Chatbot feature specification
+│       ├── plan.md                # AI Chatbot implementation plan
+│       └── tasks.md               # AI Chatbot development tasks
 ├── .claude/                       # Claude AI configuration and reusable skills
 │   ├── commands/                  # Custom Claude commands
 │   └── skills/                    # Reusable skills and components
