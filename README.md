@@ -48,7 +48,7 @@ A modern, full-stack AI-powered task management application built with Next.js 1
 - **Framework**: FastAPI
 - **ORM**: SQLModel
 - **Database**: PostgreSQL (Neon)
-- **Authentication**: JWT with python-jose
+- **Authentication**: Better Auth with JWT tokens
 - **Password Hashing**: bcrypt
 - **AI Integration**: OpenAI Agents SDK
 - **MCP Protocol**: Model Context Protocol for tool integration
@@ -126,11 +126,12 @@ Frontend runs on: **http://localhost:3000**
 
 ### Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file in the backend directory:
 
 ```env
 DATABASE_URL=your_postgresql_connection_string
 BETTER_AUTH_SECRET=your_secret_key_here
+OPENAI_API_KEY=your_openai_api_key_here  # For AI chatbot functionality
 ```
 
 ## 📝 API Endpoints
@@ -182,7 +183,7 @@ BETTER_AUTH_SECRET=your_secret_key_here
 
 ## 🔒 Security Features
 
-- JWT-based authentication with 7-day expiry
+- Better Auth-based authentication with JWT tokens
 - Bcrypt password hashing (cost factor 12)
 - User data isolation at API level
 - CORS protection
