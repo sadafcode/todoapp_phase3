@@ -1,6 +1,14 @@
-# Phase 3: AI-Powered Todo Chatbot
+# Phase 3: AI-Powered Todo Chatbot (Spec-Driven Development)
 
-A modern, full-stack AI-powered task management application built with Next.js 14, FastAPI, and OpenAI Agents SDK.
+A modern, full-stack AI-powered task management application built with Next.js 14, FastAPI, and OpenAI Agents SDK using spec-driven development methodology.
+
+## 🏗️ Spec-Driven Development Approach
+
+This project follows the Spec-Driven Development (SDD) methodology:
+- **Specifications-first**: All features are specified before implementation
+- **Reusable Skills**: Modular, reusable components and functions
+- **Constitution-Governed**: Project principles documented in specs/constitution.md
+- **AI-Assisted Development**: Leveraging Claude AI for development with .claude configuration
 
 ## 🚀 Features
 
@@ -83,7 +91,17 @@ phase3-ai-chatbot/
 │       ├── auth.py                # Auth endpoints
 │       ├── tasks.py               # Task endpoints
 │       └── chat.py                # AI Chatbot endpoints
-└── specs/                         # Project specifications
+├── specs/                         # Project specifications (Spec-Driven Development)
+│   ├── constitution.md            # Project constitution and principles
+│   ├── overview.md                # Project overview
+│   ├── features/                  # Feature specifications
+│   ├── api/                       # API specifications
+│   ├── database/                  # Database schema specifications
+│   └── task-crud/                 # Task CRUD implementation specs
+├── .claude/                       # Claude AI configuration and reusable skills
+│   ├── commands/                  # Custom Claude commands
+│   └── skills/                    # Reusable skills and components
+└── README.md                      # Project documentation
 ```
 
 ## 🚀 Getting Started
